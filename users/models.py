@@ -3,6 +3,16 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from users.user_manager import CustomUserManager
 
+from django.contrib.auth.models import Group
+
+class GroupProxy(Group):
+    class Meta:
+        proxy = True
+        verbose_name = 'Group'
+        verbose_name_plural = 'Groups'
+        app_label = 'users'  # forces it into the users section
+
+
 class CustomUser(AbstractUser):
     ROLE_CHOICES = [
         ('guide', 'Guide'),

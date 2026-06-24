@@ -1,3 +1,4 @@
+db.sqlite3
 venv/
 env/
 ENV/
@@ -6,5 +7,3 @@ ENV/
 *.pyo
 *.pyd
 __pycache__/
-
-db.sqlite3
