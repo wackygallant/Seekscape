@@ -1,0 +1,373 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home | Discover Nepal{% endblock %}
+
+{% block content %}
+<!-- ================= HERO ================= -->
+<section class="hero min-h-screen relative overflow-hidden" style="background-image: url({% static 'test-pic3.jpg' %}); background-position: center; background-size: cover;">
+    <div class="hero-overlay bg-linear-to-b from-black/70 to-black/40"></div>
+    <div class="hero-content text-center text-white">
+        <div class="max-w-3xl">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight drop-shadow-md">
+                Discover Nepal's <span class="text-primary">Hidden Trails</span>
+            </h1>
+            <p class="py-6 text-lg md:text-xl text-gray-200 font-light max-w-2xl mx-auto">
+                Explore breathtaking mountains, hidden villages, peaceful forests, and unforgettable adventures with local experts.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a class="btn btn-primary btn-lg shadow-lg hover:scale-105 transition-transform">Explore Treks</a>
+                <a class="btn btn-outline btn-white btn-lg hover:bg-white hover:text-black transition-colors">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= SEARCH BAR (OVERLAPPING) ================= -->
+<section class="-mt-16 relative z-10 px-6">
+    <div class="container mx-auto max-w-5xl">
+        <div class="card bg-base-100 shadow-2xl border border-base-200 p-6 md:p-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
+                <div class="form-control w-full">
+                    <label class="label"><span class="label-text font-semibold">Where to?</span></label>
+                    <input type="text" placeholder="Search Trek (e.g., Annapurna)" class="input input-bordered w-full">
+                </div>
+                <div class="form-control w-full">
+                    <label class="label"><span class="label-text font-semibold">Difficulty</span></label>
+                    <select class="select select-bordered w-full">
+                        <option disabled selected>Select level</option>
+                        <option>Easy</option>
+                        <option>Moderate</option>
+                        <option>Hard</option>
+                    </select>
+                </div>
+                <div class="form-control w-full">
+                    <label class="label"><span class="label-text font-semibold">Duration</span></label>
+                    <select class="select select-bordered w-full">
+                        <option disabled selected>Select duration</option>
+                        <option>1-3 Days</option>
+                        <option>4-7 Days</option>
+                        <option>8+ Days</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary w-full h-12 shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                    Search Trails
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= FEATURED TREKS ================= -->
+<section class="py-24 bg-base-100">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <div class="badge badge-primary badge-outline mb-2 uppercase tracking-widest font-semibold text-xs">Top Picks</div>
+            <h2 class="text-4xl font-black tracking-tight">Featured Adventures</h2>
+            <p class="text-base-content/60 mt-3 max-w-md mx-auto">Hand-picked itineraries highly rated by our global community.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="card bg-base-100 border border-base-200 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+                <figure class="relative overflow-hidden">
+                    <img src="{% static 'test-pic3.jpg' %}" alt="Everest Base Camp" class="group-hover:scale-105 transition-transform duration-500 object-cover h-64 w-full">
+                </figure>
+                <div class="card-body">
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="badge badge-success gap-1 text-xs">Moderate</div>
+                        <span class="text-sm font-medium text-base-content/60">12 Days</span>
+                    </div>
+                    <h2 class="card-title text-2xl font-bold group-hover:text-primary transition-colors">Everest Base Camp</h2>
+                    <p class="text-base-content/70 text-sm line-clamp-2">Stand at the foot of the world's highest peak and conquer legendary terrain.</p>
+                    <div class="divider my-2"></div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div>
+                            <span class="text-xs block text-base-content/50">Price from</span>
+                            <span class="text-2xl font-black text-secondary">$999</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card bg-base-100 border border-base-200 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+                <figure class="relative overflow-hidden">
+                    <img src="{% static 'test-pic3.jpg' %}" alt="Annapurna Circuit" class="group-hover:scale-105 transition-transform duration-500 object-cover h-64 w-full">
+                </figure>
+                <div class="card-body">
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="badge badge-warning gap-1 text-xs">Hard</div>
+                        <span class="text-sm font-medium text-base-content/60">14 Days</span>
+                    </div>
+                    <h2 class="card-title text-2xl font-bold group-hover:text-primary transition-colors">Annapurna Circuit</h2>
+                    <p class="text-base-content/70 text-sm line-clamp-2">Cross the thrilling Thorong La Pass and witness massive microclimate shifts.</p>
+                    <div class="divider my-2"></div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div>
+                            <span class="text-xs block text-base-content/50">Price from</span>
+                            <span class="text-2xl font-black text-secondary">$849</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card bg-base-100 border border-base-200 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+                <figure class="relative overflow-hidden">
+                    <img src="{% static 'test-pic3.jpg' %}" alt="Langtang Valley" class="group-hover:scale-105 transition-transform duration-500 object-cover h-64 w-full">
+                </figure>
+                <div class="card-body">
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="badge badge-info text-white gap-1 text-xs">Easy</div>
+                        <span class="text-sm font-medium text-base-content/60">7 Days</span>
+                    </div>
+                    <h2 class="card-title text-2xl font-bold group-hover:text-primary transition-colors">Langtang Valley Trek</h2>
+                    <p class="text-base-content/70 text-sm line-clamp-2">Walk through rhododendron forests and vibrant, welcoming Tamang villages.</p>
+                    <div class="divider my-2"></div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div>
+                            <span class="text-xs block text-base-content/50">Price from</span>
+                            <span class="text-2xl font-black text-secondary">$599</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+<section class="py-24 bg-base-200">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-black tracking-tight">Why Choose Us</h2>
+            <p class="text-base-content/60 mt-2">Crafting safe and unforgettable Himalayan journeys.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="card bg-base-100 shadow-md p-8 text-center hover:shadow-lg transition-shadow">
+                <div class="text-4xl mb-4 text-primary">🌄</div>
+                <h3 class="text-xl font-bold">Experienced Guides</h3>
+                <p class="text-sm text-base-content/60 mt-2">Certified local professionals who know every corner of the trails.</p>
+            </div>
+            <div class="card bg-base-100 shadow-md p-8 text-center hover:shadow-lg transition-shadow">
+                <div class="text-4xl mb-4 text-primary">🛡️</div>
+                <h3 class="text-xl font-bold">Safe Adventures</h3>
+                <p class="text-sm text-base-content/60 mt-2">Top-tier safety gear, premium medical kits, and satellite backing.</p>
+            </div>
+            <div class="card bg-base-100 shadow-md p-8 text-center hover:shadow-lg transition-shadow">
+                <div class="text-4xl mb-4 text-primary"> 🏕️</div>
+                <h3 class="text-xl font-bold">All-Inclusive Comfort</h3>
+                <p class="text-sm text-base-content/60 mt-2">All camping gear, permits, standard stays, and warm meals covered.</p>
+            </div>
+            <div class="card bg-base-100 shadow-md p-8 text-center hover:shadow-lg transition-shadow">
+                <div class="text-4xl mb-4 text-primary">⭐</div>
+                <h3 class="text-xl font-bold">Top Rated</h3>
+                <p class="text-sm text-base-content/60 mt-2">Consistently rated 5-stars by outdoor adventurers globally.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="py-24 bg-base-100">
+    <div class="container mx-auto px-6">
+        <div class="hero">
+            <div class="hero-content flex-col lg:flex-row gap-16 p-0">
+                <div class="lg:w-1/2 relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-primary/10 rounded-xl -z-10"></div>
+                    <img src="{% static 'test-pic3.jpg' %}" class="rounded-2xl shadow-2xl w-full object-cover max-h-112.5">
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="badge badge-primary mb-2 font-semibold">Our Mission</div>
+                    <h2 class="text-4xl font-black tracking-tight mb-4">About Our Agency</h2>
+                    <p class="text-base-content/70 text-lg leading-relaxed mb-6">
+                        We connect passionate adventure lovers from all over the world with Nepal's most breathtaking, untouched trekking destinations. Our focus relies on sustainable eco-tourism and providing fair wages to native mountain communities.
+                    </p>
+                    <button class="btn btn-primary shadow-lg">Read More About Us</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= UPCOMING EVENTS ================= -->
+<section class="py-24 bg-base-200">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-black tracking-tight">Upcoming Group Departures</h2>
+            <p class="text-base-content/60 mt-2">Join a verified group and share costs with fellow global trekkers.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Event 1 -->
+            <div class="card bg-base-100 shadow-xl border-l-4 border-primary">
+                <div class="card-body">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-semibold text-primary">Oct 12, 2026</span>
+                        <div class="badge badge-ghost">4 Open Slots</div>
+                    </div>
+                    <h3 class="card-title text-xl font-bold mt-2">Mardi Himal Trek</h3>
+                    <p class="text-base-content/60 text-sm">Perfect entry-level trek near Pokhara offering staggering Machapuchare vistas.</p>
+                    <div class="card-actions justify-end mt-4">
+                        <button class="btn btn-sm btn-outline btn-primary">Join Group</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Event 2 -->
+            <div class="card bg-base-100 shadow-xl border-l-4 border-secondary">
+                <div class="card-body">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-semibold text-secondary">Nov 02, 2026</span>
+                        <div class="badge badge-ghost">2 Open Slots</div>
+                    </div>
+                    <h3 class="card-title text-xl font-bold mt-2">Manaslu Circuit</h3>
+                    <p class="text-base-content/60 text-sm">A beautiful, restricted trail loop flanking the world's eighth highest peak.</p>
+                    <div class="card-actions justify-end mt-4">
+                        <button class="btn btn-sm btn-outline btn-secondary">Join Group</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Event 3 -->
+            <div class="card bg-base-100 shadow-xl border-l-4 border-accent">
+                <div class="card-body">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-semibold text-accent">Nov 18, 2026</span>
+                        <div class="badge badge-ghost">6 Open Slots</div>
+                    </div>
+                    <h3 class="card-title text-xl font-bold mt-2">Ghorepani Poon Hill</h3>
+                    <p class="text-base-content/60 text-sm">Short golden-sunrise photography exploration across classic mountain backdrops.</p>
+                    <div class="card-actions justify-end mt-4">
+                        <button class="btn btn-sm btn-outline btn-accent">Join Group</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="py-24 bg-base-100">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-black tracking-tight">Community Gallery</h2>
+            <p class="text-base-content/60 mt-2">Raw snapshots taken by our trekkers out in the wild.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
+            <div class="bg-base-200 rounded-2xl overflow-hidden group relative md:col-span-2 md:row-span-2">
+                <img src="{% static 'test-pic3.jpg' %}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            </div>
+            <div class="bg-base-200 rounded-2xl overflow-hidden group relative">
+                <img src="{% static 'test-pic3.jpg' %}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            </div>
+            <div class="bg-base-200 rounded-2xl overflow-hidden group relative">
+                <img src="{% static 'test-pic3.jpg' %}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            </div>
+            <div class="bg-base-200 rounded-2xl overflow-hidden group relative md:col-span-2">
+                <img src="{% static 'test-pic3.jpg' %}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            </div>
+            <div class="bg-base-200 rounded-2xl overflow-hidden group relative">
+                <img src="{% static 'test-pic3.jpg' %}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            </div>
+            <div class="bg-base-200 rounded-2xl overflow-hidden group relative">
+                <img src="{% static 'test-pic3.jpg' %}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="py-24 bg-base-200">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-black tracking-tight">What Our Trekkers Say</h2>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Review 1 -->
+            <div class="card bg-base-100 shadow-md p-6 justify-between">
+                <p class="text-base-content/80 italic">"The Everest Base Camp trek was beautifully coordinated. Everything from airport transfers to local tea houses was executed seamlessly. Highly recommend!"</p>
+                <div class="flex items-center gap-4 mt-6">
+                    <div class="avatar placeholder">
+                        <div class="bg-neutral text-neutral-content w-10 rounded-full"><span>AM</span></div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">Alex Morgan</h4>
+                        <span class="text-xs text-base-content/50">United States</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Review 2 -->
+            <div class="card bg-base-100 shadow-md p-6 justify-between">
+                <p class="text-base-content/80 italic">"Crossing Thorong La pass felt entirely secure knowing our local guides had absolute command over alternative routes and real-time mountain climate checking."</p>
+                <div class="flex items-center gap-4 mt-6">
+                    <div class="avatar placeholder">
+                        <div class="bg-neutral text-neutral-content w-10 rounded-full"><span>DB</span></div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">David Schmidt</h4>
+                        <span class="text-xs text-base-content/50">Germany</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Review 3 -->
+            <div class="card bg-base-100 shadow-md p-6 justify-between">
+                <p class="text-base-content/80 italic">"Unbelievable experience! The views were spectacular, but it was the deep warmth and planning of our local guides that truly made it unforgettable."</p>
+                <div class="flex items-center gap-4 mt-6">
+                    <div class="avatar placeholder">
+                        <div class="bg-neutral text-neutral-content w-10 rounded-full"><span>KL</span></div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">Karen Lim</h4>
+                        <span class="text-xs text-base-content/50">Singapore</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section class="py-20 bg-base-100">
+    <div class="container mx-auto px-6">
+        <div class="stats stats-vertical lg:stats-horizontal shadow-xl border border-base-200 w-full bg-base-100 py-4">
+            <div class="stat text-center lg:text-left">
+                <div class="stat-value text-primary text-4xl lg:text-5xl">500+</div>
+                <div class="stat-title font-medium mt-1">Treks Completed</div>
+            </div>
+            <div class="stat text-center lg:text-left">
+                <div class="stat-value text-secondary text-4xl lg:text-5xl">3,000+</div>
+                <div class="stat-title font-medium mt-1">Happy Clients</div>
+            </div>
+            <div class="stat text-center lg:text-left">
+                <div class="stat-value text-accent text-4xl lg:text-5xl">25</div>
+                <div class="stat-title font-medium mt-1">Expert Local Guides</div>
+            </div>
+            <div class="stat text-center lg:text-left">
+                <div class="stat-value text-neutral text-4xl lg:text-5xl">98%</div>
+                <div class="stat-title font-medium mt-1">Satisfaction Rate</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="py-24 bg-linear-to-r from-primary to-primary-focus text-primary-content text-center px-6">
+    <div class="max-w-2xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-black tracking-tight">Ready For Your Next Adventure?</h2>
+        <p class="py-6 text-primary-content/80 max-w-md mx-auto">
+            Join our upcoming seasonal trekking communities and explore hidden mountain ranges.
+        </p>
+        <button class="btn btn-secondary btn-lg shadow-xl hover:scale-105 transition-transform">
+            Secure Your Spot
+        </button>
+    </div>
+</section>
+
+{% endblock %}

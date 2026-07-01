@@ -7,3 +7,4 @@ ENV/
 *.pyo
 *.pyd
 __pycache__/
+.prettierrc

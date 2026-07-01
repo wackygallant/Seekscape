@@ -1,0 +1,159 @@
+{% load static %}
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en" data-theme="light" class="scroll-smooth">
+
+<head>
+    <title>Seekscape - {% block title %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% tailwind_css %}
+</head>
+
+<body class="bg-base-100 text-base-content min-h-screen flex flex-col justify-between">
+
+    <!-- Sticky Navbar -->
+    <header class="sticky top-0 z-50 bg-base-100/90 backdrop-blur-md border-b border-base-200 transition-all">
+        <div class="navbar max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16">
+
+            <!-- Logo Section -->
+            <div class="navbar-start">
+                <a href="#" class="btn btn-ghost text-xl font-black gap-2 tracking-tight normal-case pl-0">
+                    <img src="{% static 'logo.png' %}" alt="Seekscape Logo"
+                        class="w-9 h-9 rounded-full object-cover shadow-sm">
+                    <span>Seek<span class="text-primary">scape</span></span>
+                </a>
+            </div>
+
+            <!-- Desktop Menu (Hidden on Mobile) -->
+            <div class="navbar-center hidden md:flex">
+                <ul class="menu menu-horizontal gap-1 px-1 font-medium">
+                    <li><a href="#" class="rounded-lg hover:bg-primary/10 hover:text-primary transition-all">Home</a>
+                    </li>
+                    <li><a href="#" class="rounded-lg hover:bg-primary/10 hover:text-primary transition-all">About
+                            Us</a></li>
+                    <li><a href="#" class="rounded-lg hover:bg-primary/10 hover:text-primary transition-all">Gallery</a>
+                    </li>
+                    <li><a href="#" class="rounded-lg hover:bg-primary/10 hover:text-primary transition-all">Events</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Navbar End Actions -->
+            <div class="navbar-end gap-2">
+                <a href="#" class="btn btn-primary btn-sm md:btn-md hidden sm:inline-flex shadow-sm">Book Now</a>
+
+                <!-- Mobile Hamburger Layout -->
+                <div class="dropdown dropdown-end md:hidden">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-1 p-3 shadow-xl bg-base-100 border border-base-200 rounded-2xl w-56 font-medium gap-1">
+                        <li><a href="#" class="py-2.5">Home</a></li>
+                        <li><a href="#" class="py-2.5">About Us</a></li>
+                        <li><a href="#" class="py-2.5">Gallery</a></li>
+                        <li><a href="#" class="py-2.5">Events</a></li>
+                        <div class="divider my-1"></div>
+                        <li><a href="#" class="btn btn-primary btn-sm text-white text-center">Book Now</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main class="w-full flex-grow">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-neutral text-neutral-content pt-16 pb-8 border-t border-neutral-focus">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="footer grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 pb-12 border-b border-neutral-content/10">
+
+                <!-- Brand Info Block -->
+                <div>
+                    <div class="flex items-center gap-2 mb-3">
+                        <img src="{% static 'logo.png' %}" alt="Seekscape Logo"
+                            class="w-8 h-8 rounded-full object-cover">
+                        <span class="text-xl font-bold tracking-tight text-white">Seekscape</span>
+                    </div>
+                    <p class="text-sm opacity-70 leading-relaxed max-w-xs">
+                        Crafting curated pathways, safety protocols, and memorable visual trail encounters across local
+                        mountain ridges.
+                    </p>
+                </div>
+
+                <!-- Column 1 Links -->
+                <div>
+                    <span class="footer-title text-white tracking-widest opacity-100">Destinations</span>
+                    <a class="link link-hover opacity-70 hover:opacity-100 hover:text-primary transition-colors">Everest
+                        Region</a>
+                    <a class="link link-hover opacity-70 hover:opacity-100 hover:text-primary transition-colors">Annapurna
+                        Circuit</a>
+                    <a class="link link-hover opacity-70 hover:opacity-100 hover:text-primary transition-colors">Langtang
+                        Valley</a>
+                    <a class="link link-hover opacity-70 hover:opacity-100 hover:text-primary transition-colors">Hidden
+                        Trails</a>
+                </div>
+
+                <!-- Column 2 Links -->
+                <div>
+                    <span class="footer-title text-white tracking-widest opacity-100">Company</span>
+                    <a class="link link-hover opacity-70 hover:opacity-100 hover:text-primary transition-colors">About
+                        Us</a>
+                    <a class="link link-hover opacity-70 hover:opacity-100 hover:text-primary transition-colors">Our
+                        Guides</a>
+                    <a class="link link-hover opacity-70 hover:opacity-100 hover:text-primary transition-colors">Safety
+                        Guides</a>
+                    <a
+                        class="link link-hover opacity-70 hover:opacity-100 hover:text-primary transition-colors">Testimonials</a>
+                </div>
+
+                <!-- Column 3: Newsletter -->
+                <div>
+                    <span class="footer-title text-white tracking-widest opacity-100">Newsletter</span>
+                    <p class="text-sm opacity-70 mb-2">Get regular dispatch updates directly to your inbox.</p>
+                    <div class="form-control w-full">
+                        <div class="relative w-full">
+                            <input type="email" placeholder="username@site.com"
+                                class="input input-bordered w-full pr-12 text-base-content bg-white" />
+                            <button class="btn btn-primary absolute top-0 right-0 rounded-l-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Lower Footer Legal Info -->
+            <div class="flex flex-col sm:flex-row justify-between items-center pt-8 gap-4 text-xs opacity-60">
+                <div>
+                    <p>&copy; 2026 Seekscape. All rights reserved.</p>
+                </div>
+                <div class="flex gap-6">
+                    <a class="link link-hover">Privacy Policy</a>
+                    <a class="link link-hover">Terms of Service</a>
+                    <a class="link link-hover">Support Center</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

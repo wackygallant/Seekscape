@@ -26,14 +26,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-&0l36a#iu9go(@oq)_$l%=%#wx=a!k1$lcx$ix)(ohhamnp#t0'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
 
 ALLOWED_HOSTS = []
 
 
-# Application definition
 
+# Application definition
 INSTALLED_APPS = [
     # Custom Admin Template
     'unfold',
@@ -45,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Handles user creation and authentication
     'users.apps.UsersConfig',
+    'webpages',
     # Handles product creation and management
     'catalogue',
     # Handles booking creation and management
@@ -56,12 +59,14 @@ INSTALLED_APPS = [
     'theme',
 ]
 
+
 if DEBUG:
     # Add django_browser_reload only in DEBUG mode
     INSTALLED_APPS += ["django_browser_reload"]
 
 
 TAILWIND_APP_NAME = 'theme'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -73,6 +78,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
 if DEBUG:
     # Add django_browser_reload middleware only in DEBUG mode
     MIDDLEWARE += [
@@ -81,6 +87,7 @@ if DEBUG:
 
 
 ROOT_URLCONF = 'core.urls'
+
 
 TEMPLATES = [
     {
@@ -146,24 +153,29 @@ USE_TZ = True
 
 # Static files directory (includes CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
-
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [ BASE_DIR / 'static' ]
 STATIC_ROOT = BASE_DIR / 'static_root'
 
 
 # Media files directory
-
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Defining Default User Authentication
-
 AUTH_USER_MODEL = 'users.CustomUser'
 
-# TinyMCE configuration
 
+# Session expires after 30 minutes of inactivity
+SESSION_COOKIE_AGE = 1800 
+
+
+# This is the key: it saves the session and updates the cookie on every request
+SESSION_SAVE_EVERY_REQUEST = True
+
+
+# TinyMCE configuration
 TINYMCE_DEFAULT_CONFIG = {
     "height": "500px",
     "width": "auto",
@@ -172,25 +184,22 @@ TINYMCE_DEFAULT_CONFIG = {
     "toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help",
 }
 
-# UNFOLD = {
-#     "SITE_HEADER" : "Seekscape Admin",
-# }
 
 UNFOLD = {
     "SITE_HEADER" : "Seekscape Admin",
-    "SITE_DROPDOWN": [
-        {
-            "icon": "diamond",
-            "title": _("My site"),
-            "link": "https://example.com",
-            "attrs": {
-                "target": "_blank",
-            },
-        },
-        {
-            "icon": "diamond",
-            "title": _("My site"),
-            "link": reverse_lazy("admin:index"),
-        },
-    ]
+    # "SITE_DROPDOWN": [
+    #     {
+    #         "icon": "diamond",
+    #         "title": _("My site"),
+    #         "link": "https://example.com",
+    #         "attrs": {
+    #             "target": "_blank",
+    #         },
+    #     },
+    #     {
+    #         "icon": "diamond",
+    #         "title": _("My site"),
+    #         "link": reverse_lazy("admin:index"),
+    #     },
+    # ]
 }

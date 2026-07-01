@@ -21,12 +21,15 @@ class Trek(BaseModel):
     image = models.ImageField(upload_to='trek_images/', null=True, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     itinerary = HTMLField()
+
     
     map_embed_url = models.TextField(
         null=True, 
         blank=True, 
         help_text="Google My Maps 'Embed on my site' URL (only the src link inside the iframe)"
     )
+    
+    featured = models.BooleanField(default=False)
     
     def save(self, *args, **kwargs):
         # 1. Corrected: Use self.title
